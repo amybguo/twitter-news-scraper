@@ -20,11 +20,9 @@ public class NBCScraper {
     public static void main(String[] args) throws IOException {
 
         getArticles("https://www.nbcnews.com", 10);
-
         comparisons();
         Analysis.getSentiments(topTenNBCArticles);
         Analysis.getSentiments(topTenNBCArticles);
-
 
     }
 

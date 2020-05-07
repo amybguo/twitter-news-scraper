@@ -22,7 +22,6 @@ public class Analysis {
 		System.out.println(analyze(FoxScraper.getArticleText("https://www.foxnews.com/world/kenya-floods-landslides-heavy-rain-east-africa-severe-weather-displaced")));
 		
 	}
-	
 	//0 - Very Negative 
 	//1 - Negative
 	//2 - Neutral

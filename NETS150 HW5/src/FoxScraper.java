@@ -23,7 +23,6 @@ public class FoxScraper {
     public static void main(String[] args) throws IOException {
 
         getArticles("https://www.foxnews.com", 10);
-        
         comparisons();
         Analysis.getSentiments(topTenFOXArticles);
         Analysis.getSentiments(topTenFOXArticles);
