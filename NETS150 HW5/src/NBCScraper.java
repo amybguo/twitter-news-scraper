@@ -23,6 +23,7 @@ public class NBCScraper {
 
         comparisons();
         Analysis.getSentiments(topTenNBCArticles);
+        Analysis.getSentiments(topTenNBCArticles);
 
 
     }

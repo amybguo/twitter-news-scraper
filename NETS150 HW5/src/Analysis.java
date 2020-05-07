@@ -28,6 +28,7 @@ public class Analysis {
 	//2 - Neutral
 	//3 - Positive
 	//4 - Very Positive
+	
 	public static int analyze(String article) {
 		Properties prop = new Properties();
 		prop.setProperty("annotators", "tokenize, ssplit, pos, parse, sentiment");

@@ -26,6 +26,7 @@ public class FoxScraper {
         
         comparisons();
         Analysis.getSentiments(topTenFOXArticles);
+        Analysis.getSentiments(topTenFOXArticles);
     }
     
     public static Map<String, String> getTopTen () {
