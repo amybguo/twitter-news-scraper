@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,7 +23,13 @@ public class FoxScraper {
     public static void main(String[] args) throws IOException {
 
         getArticles("https://www.foxnews.com", 10);
+        
         comparisons();
+        Analysis.getSentiments(topTenFOXArticles);
+    }
+    
+    public static Map<String, String> getTopTen () {
+    	return topTenFOXArticles;
     }
 
     public static void getArticles(String url, int amount) throws IOException {
@@ -48,7 +55,7 @@ public class FoxScraper {
                 if (!topTenFOXArticles.containsKey(allArticleLinks.get(index))) {
                     if (allArticleLinks.get(index).substring(0, 2).equals("//")) {
                         topTenFOXArticles.put("https:" + allArticleLinks.get(index),
-                                getArticleText(allArticleLinks.get(index)));
+                                getArticleText("https:" + allArticleLinks.get(index)));
                     } else {
                         topTenFOXArticles.put(allArticleLinks.get(index), getArticleText(allArticleLinks.get(index)));
                     }
@@ -70,7 +77,7 @@ public class FoxScraper {
                     if (allArticleLinks.get(index2).contains("/us/")) {
                         if (allArticleLinks.get(index2).substring(0, 2).equals("//")) {
                             usNewsArticles.put("https:" + allArticleLinks.get(index2),
-                                    getArticleText(allArticleLinks.get(index2)));
+                                    getArticleText("https:" + allArticleLinks.get(index2)));
                         } else {
                             usNewsArticles.put(allArticleLinks.get(index2),
                                     getArticleText(allArticleLinks.get(index2)));
@@ -93,7 +100,7 @@ public class FoxScraper {
                     if (allArticleLinks.get(index2).contains("/entertainment/")) {
                         if (allArticleLinks.get(index2).substring(0, 2).equals("//")) {
                             entertainmentArticles.put("https:" + allArticleLinks.get(index2),
-                                    getArticleText(allArticleLinks.get(index2)));
+                                    getArticleText("https:" + allArticleLinks.get(index2)));
                         } else {
                             entertainmentArticles.put(allArticleLinks.get(index2),
                                     getArticleText(allArticleLinks.get(index2)));
@@ -116,7 +123,7 @@ public class FoxScraper {
                     if (allArticleLinks.get(index2).contains("/world/")) {
                         if (allArticleLinks.get(index2).substring(0, 2).equals("//")) {
                             worldNewsArticles.put("https:" + allArticleLinks.get(index2),
-                                    getArticleText(allArticleLinks.get(index2)));
+                                    getArticleText("https:" + allArticleLinks.get(index2)));
                         } else {
                             worldNewsArticles.put(allArticleLinks.get(index2),
                                     getArticleText(allArticleLinks.get(index2)));
@@ -139,7 +146,7 @@ public class FoxScraper {
                     if (allArticleLinks.get(index2).contains("/politics/")) {
                         if (allArticleLinks.get(index2).substring(0, 2).equals("//")) {
                             politicsArticles.put("https:" + allArticleLinks.get(index2),
-                                    getArticleText(allArticleLinks.get(index2)));
+                                    getArticleText("https:" + allArticleLinks.get(index2)));
                         } else {
                             politicsArticles.put(allArticleLinks.get(index2),
                                     getArticleText(allArticleLinks.get(index2)));
