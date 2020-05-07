@@ -22,6 +22,7 @@ public class NBCScraper {
         getArticles("https://www.nbcnews.com", 10);
         comparisons();
         Analysis.getSentiments(topTenNBCArticles);
+        
         Analysis.getSentiments(topTenNBCArticles);
 
     }

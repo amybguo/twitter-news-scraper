@@ -25,6 +25,7 @@ public class FoxScraper {
         getArticles("https://www.foxnews.com", 10);
         comparisons();
         Analysis.getSentiments(topTenFOXArticles);
+        
         Analysis.getSentiments(topTenFOXArticles);
     }
     
