@@ -162,7 +162,7 @@ public class FoxScraper {
 
         Elements nameElements2 = doc.select("p");
 
-        String text = nameElements2.text().substring(161);
+        String text = doc.title() + " " + nameElements2.text().substring(161);
         return text;
     }
 

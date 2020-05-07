@@ -20,7 +20,6 @@ public class NBCScraper {
     public static void main(String[] args) throws IOException {
 
         getArticles("https://www.nbcnews.com", 10);
-
         comparisons();
 
     }
@@ -33,7 +32,6 @@ public class NBCScraper {
 
         for (Element link : links) {
             allArticleLinks.add(link.attr("href"));
-            System.out.println(link);
         }
 
         int counter = 0;
@@ -133,8 +131,8 @@ public class NBCScraper {
         Document doc = Jsoup.connect(url).get();
 
         Elements nameElements2 = doc.select("p");
-
-        String text = nameElements2.text().substring(0, nameElements2.text().length() - 21);
+        
+        String text = doc.title() + " " + nameElements2.text().substring(0, nameElements2.text().length() - 21);
         return text;
     }
 
